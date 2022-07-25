@@ -1,0 +1,53 @@
+{
+	"name": "yutang-code-generator",
+	"displayName": "yutang-code-generator",
+	"description": "",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.69.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./out/extension.js",
+	"activationEvents": [
+		"onCommand:yutang-code-generator.constants",
+		"onCommand:yutang-code-generator.model",
+		"onCommand:yutang-code-generator.circularReferenceModel"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "yutang-code-generator.constants",
+				"title": "yutang-code-generator.constants: 选中变量名，生成 constant 模版代码"
+			},
+			{
+				"command": "yutang-code-generator.model",
+				"title": "yutang-code-generator.model: 选中变量名，生成 model 模版代码"
+			},
+			{
+				"command": "yutang-code-generator.circularReferenceModel",
+				"title": "yutang-code-generator.circularReferenceModel: 选中变量名，生成 circularReferenceModel 模版代码"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix"
+	},
+	"devDependencies": {
+		"@antfu/eslint-config": "^0.25.2",
+		"@types/glob": "^7.2.0",
+		"@types/node": "^18.6.1",
+		"@types/vscode": "^1.69.0",
+		"@typescript-eslint/eslint-plugin": "^5.30.0",
+		"@typescript-eslint/parser": "^5.30.0",
+		"eslint": "^8.20.0",
+		"glob": "^8.0.3",
+		"typescript": "^4.7.4"
+	}
+}
